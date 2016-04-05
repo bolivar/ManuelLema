@@ -1,0 +1,737 @@
+@import 'responsive_menu'
+// colors
+$main: #00c8ff
+$highlight: #b7b6ba
+
+// fonts
+$primary_font: 'Montserrat', sans-serif
+$secondary_font: 'Arvo', serif
+
+// margin
+$basic: 28px
+
+// buttons
+.primary_button
+    background: $main
+    width: 131px
+    height: 39px
+    color: white
+    border: 0px
+    text-transform: uppercase
+    cursor: pointer
+
+*
+    box-sizing: border-box
+
+html *
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+html, body, button
+    font-family: $primary_font
+
+.clearfix:before, .clearfix:after
+    content: " "
+    display: table
+
+.clearfix:after
+    clear: both
+
+.wrapper
+    width: 1170px
+    max-width: 90%
+    margin: 0 auto
+    text-align: center
+
+h1, h2, h3, h4, h5, h6
+    font-weight: 300
+
+h2
+    font-size: 1.5rem
+
+textarea:focus, input:focus
+    outline: none
+
+*:focus
+    outline: none
+a
+    &:hover
+        color: $main
+
+// Media Queries
+$breakpoint-tablet: 768px
+$breakpoint-mobile: 480px
+$breakpoint-desktop: 965px
+
+section.cover
+    background: url(/img/bg2.jpg) no-repeat center center
+    background-size: cover
+    text-align: center
+    .logo
+        margin: 0 auto
+        text-align: center
+        padding-top: 12rem
+        img
+            width: 100px
+    h1
+        font-size: 2.5rem
+        color: white
+        text-transform: uppercase
+        padding-top: 3rem
+        letter-spacing: .1rem
+        span
+            color: $main
+    p
+        font-size: .7rem
+        text-transform: uppercase
+        color: white
+        padding: 2rem 0 2rem 0
+        &:before, &:after
+            content: ""
+            display: block
+            width: 265px
+            margin: 0 auto
+        &::before
+            border-top: 1px solid #5d5d5d
+            padding-bottom: 1rem
+        &::after
+            padding-bottom: 1rem
+            border-bottom: 1px solid #5d5d5d
+        span
+            color: $main
+    button
+        margin-bottom: 2rem
+        &:hover
+            background: white
+            color: $main
+    ul
+        padding-bottom: 10rem
+        li
+            display: inline-block
+            a
+                color: white
+                text-decoration: none
+                font-family: $secondary_font
+                font-style: italic
+                font-size: .7rem
+                &:hover
+                    color: $main
+
+nav
+    background: #0f1118
+    text-align: center
+    @media (max-width: $breakpoint-desktop)
+        display: none
+    ul
+        .logo
+            padding: 0
+            div
+                padding: 0 2rem
+            img
+                cursor: pointer
+                padding: 10px
+                width: 90%
+                vertical-align: middle
+                background: #292C31
+        li
+            display: inline-block
+            float: none
+            a
+                color: white
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 12px
+                line-height: 3rem
+                display: block
+                position: relative
+                padding: 1rem 1rem
+                &:hover
+                    color: $main
+                    &::after
+                        content: ""
+                        width: 0
+                        height: 0
+                        border-left: 5px solid transparent
+                        border-right: 5px solid transparent
+                        border-bottom: 10px solid $main
+                        position: absolute
+                        bottom: 10px
+                        left: 45%
+                @media (min-width: $breakpoint-desktop)
+                    padding: 1rem 2rem
+section.about
+    padding: 8rem 0
+    overflow: hidden
+    .wrapper
+        overflow: hidden
+    h2
+        font-weight: bold
+        text-transform: uppercase
+        margin-bottom: 28px
+        &::before
+            margin: 0 auto 31px auto
+            width: 50px
+            height: 3px
+            content: ""
+            display: block
+            background: $main
+    p
+        font-family: $secondary_font
+        font-style: italic
+        font-size: 1.1rem
+        margin-bottom: 102px
+        color: #000
+        line-height: 1.5rem
+        padding: 0 2%
+    .row
+        text-align: center
+        max-width: 80%
+        margin: 0 auto
+        @media (min-width: $breakpoint-desktop)
+            float: left
+            width: 30%
+            margin-right: 5%
+            &:nth-last-child(1)
+                margin-right: 0
+        hr
+            width: 50%
+            margin: 0 auto 0 auto
+            border: 1px solid #e0e0e0
+            @media (min-width: $breakpoint-desktop)
+                width: 100%
+        .circle
+            width: 100px
+            height: 100px
+            border-radius: 100px
+            background: $main
+            z-index: 1
+            margin: 0 auto $basic auto
+            line-height: 100px
+            position: relative
+            .white_circle
+                position: absolute
+                left: 8px
+                top: 8px
+                width: 85px
+                height: 85px
+                border-radius: 80px
+                background: $main
+                border: 2px solid #fff
+                z-index: 2
+                text-align: center
+                margin: 0 auto
+                i
+                    color: white
+        h3
+            font-size: 1rem
+            text-transform: uppercase
+            font-weight: bold
+            margin: $basic 0
+        p
+            color: #8d8d8d
+            line-height: 26px
+            font-size: .9rem
+            font-style: normal
+            padding: 0 10px
+section.skills
+    padding: 8rem 0
+    background: #1f2127
+    clear: both
+    overflow: auto
+    h2
+        position: relative
+        font-family: $secondary_font
+        font-size: 1.5rem
+        text-transform: uppercase
+        margin-bottom: 28px
+        color: white
+        .line
+            position: absolute
+            border-top: 1px solid #e0e0e0
+            height: 1px
+            width: 100px
+            content: ""
+            &:nth-child(2)
+                right: 20%
+                bottom: 10px
+                @media (min-width: $breakpoint-mobile)
+                    right: 10%
+                @media (min-width: $breakpoint-tablet)
+                    right: 30%
+            &:nth-child(1)
+                left: 20%
+                bottom: 10px
+                @media (min-width: $breakpoint-mobile)
+                    left: 10%
+                @media (min-width: $breakpoint-tablet)
+                    left: 30%
+    p
+        color: white
+        line-height: 1.5rem
+        font-size: .9rem
+        padding: 0 1%
+        font-style: italic
+        @media (min-width: $breakpoint-tablet)
+            font-size: 1rem
+        span
+            color: $main
+    .half.right
+        margin-right: 0
+        float: right
+        padding: 0 4%
+        @media (min-width: $breakpoint-mobile)
+            margin-right: 0
+            float: right
+            padding: 0 2%
+    .half
+        margin-top: 4rem
+        width: 100%
+        float: left
+        text-align: left
+        padding: 0 4%
+        @media (min-width: $breakpoint-mobile)
+            margin-top: 4rem
+            width: 48%
+            margin-right: 4%
+            float: left
+            text-align: left
+            padding: 0 2%
+        .box-container
+            margin-bottom: 30px
+        .title
+            color: white
+            margin-bottom: 18px
+            text-transform: uppercase
+            font-size: .9rem
+            display: inline-block
+            width: 80%
+            // margin-top: 52px
+        .meter
+            margin-top: 5px
+            height: 10px
+            position: relative
+            background: #555
+            box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3)
+            span
+                display: block
+                height: 100%
+                box-shadow: inset 0 2px 9px  rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4)
+                position: relative
+                overflow: hidden
+                background-color: #00c8ff
+            .tea
+                width: 100%
+            .html
+                width: 90%
+            .css
+                width: 90%
+            .javascript
+                width: 70%
+            .jquery
+                width: 70%
+            .e-commerce
+                width: 80%
+        .tooltip
+            width: 12%
+            display: inline-block
+            float: right
+            .tooltip-text
+                visibility: visible
+                width: 46px
+                background-color: black
+                color: #fff
+                text-align: center
+                padding: 5px 0
+                border-radius: 6px
+                position: absolute
+                z-index: 1
+                &::after
+                    content: " "
+                    position: absolute
+                    top: 100%
+                    left: 50%
+                    margin-left: -5px
+                    border-width: 5px
+                    border-style: solid
+                    border-color: black transparent transparent transparent
+section.portfolio
+    padding: 8rem 0
+    overflow: hidden
+    .wrapper
+        overflow: hidden
+    h2
+        text-transform: uppercase
+        font-weight: bold
+        margin-bottom: $basic
+        &::before
+            margin: 0 auto 31px auto
+            width: 50px
+            height: 3px
+            content: ""
+            display: block
+            background: $main
+    p
+        font-family: $secondary_font
+        font-style: italic
+        margin-bottom: 100px
+    ul
+        margin-bottom: 71px
+        li
+            display: inline-block
+            a
+                text-decoration: none
+                padding: 6px 15px
+                display: block
+                border: 1px solid #dcdcdc
+                color: black
+                text-transform: uppercase
+                font-size: .8rem
+                &:hover, &:active
+                    background: $main
+                    color: white
+    .row
+        text-align: center
+        width: auto
+        padding: 4%
+        margin: 0 auto
+        @media (min-width: $breakpoint-mobile)
+            // width: 80%
+        @media (min-width: $breakpoint-tablet)
+            width: 80%
+        @media (min-width: $breakpoint-desktop)
+            text-align: center
+            float: left
+            width: 30%
+            margin-right: 5%
+            padding: 0
+            &:nth-last-child(1)
+                margin-right: 0
+        .box
+            background-size: cover
+            height: 300px
+        .shop
+            background-image: url(/img/shop.png)
+        .blog
+            background-image: url(/img/shop_blog.png)
+        .lilynily
+            background-image: url(/img/lilynily.png)
+
+        .overlay
+            background: rgba(0,0,0,.99)
+            text-align: center
+            height: 300px
+            opacity: 0
+            padding-top: 120px
+            cursor: pointer
+            -webkit-transition: opacity .25s ease
+            -moz-transition: opacity .25s ease
+            &:hover
+                opacity: 1
+            .circle
+                width: 50px
+                height: 50px
+                border-radius: 50px
+                background: $main
+                line-height: 60px
+                margin: 0 auto 10px auto
+
+            i
+                color: white
+            .title
+                color: white
+                margin-bottom: 5px
+                text-transform: uppercase
+            .sub-title
+                color: #cdcdcd
+                font-size: .8rem
+        a
+            text-decoration: none
+section.testimonial
+    background: #1f2127
+    padding: 4rem 0
+    i
+        color: $main
+        margin-bottom: 49px
+    p
+        color: white
+        line-height: 1.5rem
+        margin-bottom: $basic
+    span
+        color: #575b62
+    hr
+        border-color: #292d34
+        width: 230px
+        margin: $basic auto
+    ul
+        margin-bottom: 37px
+        li
+            display: inline-block
+            a
+                color: white
+                text-decoration: none
+    .dots
+        li
+            width: 30px
+            height: 30px
+            border-radius: 30px
+            border: 1px solid $main
+            line-height: 30px
+section.services
+    padding: 8rem 0
+    overflow: hidden
+    .wrapper
+        overflow: auto
+    h2
+        text-transform: uppercase
+        font-weight: bold
+        margin-bottom: $basic
+        &::before
+            margin: 0 auto 31px auto
+            width: 50px
+            height: 3px
+            content: ""
+            display: block
+            background: $main
+    p
+        margin-bottom: 50px
+        padding: 0 4%
+        font-style: italic
+    .row
+        text-align: center
+        // float: left
+        border-right: 1px solid #dcdcdc
+        border-left: 1px solid #dcdcdc
+        border-top: 1px solid #dcdcdc
+        border-bottom: 2px solid $main
+        padding: 80px 40px
+        cursor: pointer
+        transition: background-color 0.5s ease
+        position: relative
+        // margin: 0 4% $basic 4%
+        margin: $basic auto 0 auto
+        @media (max-width: $breakpoint-mobile)
+            padding: 20px
+        @media (min-width: $breakpoint-tablet)
+            max-width: 80%
+        @media (min-width: $breakpoint-desktop)
+            text-align: center
+            float: left
+            width: 32%
+            border-right: 1px solid #dcdcdc
+            border-left: 1px solid #dcdcdc
+            border-top: 1px solid #dcdcdc
+            border-bottom: 2px solid $main
+            padding: 20px
+            margin: $basic 2% 0 0
+            cursor: pointer
+            transition: background-color 0.5s ease
+            position: relative
+            &:nth-last-child(1)
+                margin-right: 0
+        &:hover
+            background: #1d1f25
+            border-top: none
+            border-right: none
+            border-left: none
+            border-bottom: 2px solid $main
+            p, h3
+                color: white
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                right: 0
+                border-width: 0 25px 25px 0
+                border-style: solid
+                border-color: #41444c #fff
+        i
+            color: $main
+        h3
+            font-size: 1rem
+            text-transform: uppercase
+            font-weight: bold
+            margin: $basic 0
+        p
+            color: #8d8d8d
+            line-height: 26px
+            font-size: .9rem
+            font-style: normal
+            padding: 15px 0
+            margin: 0
+        hr
+            width: 100%
+            margin: 0 auto 0 auto
+            border: 1px solid #e0e0e0
+            margin-bottom: $basic
+section.newsletter
+    background: #1f2127
+    padding: 4rem 0
+    i
+        color: $main
+        margin-bottom: 38px
+    h2
+        text-transform: uppercase
+        font-family: $secondary_font
+        margin-bottom: $basic
+        color: white
+    p
+        color: white
+        margin-bottom: 27px
+        line-height: 1.5rem
+    form
+        input
+            width: 50%
+            height: 40px
+            border: 1px solid white
+            background: #1f2127
+            color: $main
+            font-family: $secondary_font
+            padding: 0 0 0 20px
+            margin-bottom: 33px
+        button
+            &:hover
+                background: white
+                color: $main
+section.contact
+    padding: 8rem 0
+    .wrapper
+        // padding: 0 4rem
+    h2
+        text-transform: uppercase
+        font-weight: bold
+        margin-bottom: $basic
+        &::before
+            margin: 0 auto 31px auto
+            width: 50px
+            height: 3px
+            content: ""
+            display: block
+            background: $main
+    p
+        line-height: 1.5rem
+    .half.right
+        margin-top: 0
+        @media (min-width: $breakpoint-desktop)
+            margin-right: 0
+            float: right
+            margin-top: 4rem
+    .half
+        margin-top: 4rem
+        width: 100%
+        text-align: left
+        @media (min-width: $breakpoint-desktop)
+            margin-top: 4rem
+            width: 48%
+            margin-right: 4%
+            float: left
+            text-align: left
+    form
+        color: #c8c8c8
+        font-family: $secondary_font
+        font-style: italic
+        input
+            border-bottom: 1px solid #dcdcdc
+            border-top: none
+            border-right: none
+            border-left: none
+            font-family: $secondary_font
+            font-size: .8rem
+            width: 100%
+            padding: 15px 0
+            margin-bottom: 50px
+        i
+            padding-right: 10px
+        button
+            &:hover
+                background: white
+                color: $main
+                border: 1px solid #dcdcdc
+section.map
+    img
+        width: 100%
+footer
+    overflow: hidden
+    background: #0f1118
+    // height: 200px
+    .half.right
+        margin-right: 0
+        float: right
+        text-align: right
+    .half
+        margin-top: 4rem
+        margin-bottom: 2rem
+        width: 48%
+        margin-right: 4%
+        float: left
+        text-align: left
+    p
+        color: white
+        line-height: 1.5rem
+        a
+            color: $main
+            text-decoration: none
+            &:hover
+                color: white
+        i
+            font-size: 1.2em !important
+            color: $main
+    ul
+        li
+            display: inline-block
+            border: 1px solid #dcdcdc
+            padding: 3px
+            &:hover
+                &:nth-child(1)
+                    background: #3F3F3F
+                &:nth-child(2)
+                    background: #3F3F3F
+                &:nth-child(3)
+                    background: #1dcaff
+                &:nth-child(4)
+                    background: #cb2027
+
+        i
+            color: white
+
+// css for the back to top button
+.cd-top
+    display: inline-block
+    height: 40px
+    width: 40px
+    position: fixed
+    bottom: 40px
+    right: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05)
+    /* image replacement properties */
+    overflow: hidden
+    text-indent: 100%
+    white-space: nowrap
+    background: lighten($main, 30) url(../img/cd-top-arrow.svg) no-repeat center 50%
+    visibility: hidden
+    opacity: 0
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s
+    -moz-transition: opacity .3s 0s, visibility 0s .3s
+    transition: opacity .3s 0s, visibility 0s .3s
+    @media only screen and (min-width: 768px)
+        right: 20px
+        bottom: 20px
+    @media only screen and (min-width: 1024px)
+        right: 30px
+        bottom: 30px
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s
+    -moz-transition: opacity .3s 0s, visibility 0s 0s
+    transition: opacity .3s 0s, visibility 0s 0s
+
+.cd-top.cd-is-visible
+    /* the button becomes visible */
+    visibility: visible
+    opacity: 1
+
+.cd-top.cd-fade-out
+    opacity: .5
+
+.no-touch .cd-top:hover
+    background-color: $main
+    opacity: 1
