@@ -10,16 +10,23 @@ $secondary_font: 'Arvo', serif
 // margin
 $basic: 28px
 
+//Hide all svgs called at the beggining
+.hidden
+    position: absolute
+    top: -9999999px
+    left: -9999999px
+
 // buttons
 .primary_button
-    background: $main
-    width: 131px
-    height: 39px
+    background: #237FA9
+    border: 2px solid #2c9fd3
+    border-radius: 2px
     color: white
-    border: 0px
+    padding: 1rem 2.1rem
     text-transform: uppercase
     cursor: pointer
-
+    &:hover
+        background: #1a5f7f
 *
     box-sizing: border-box
 
@@ -68,28 +75,58 @@ section.cover
     background-size: cover
     text-align: center
     .logo
-        margin: 0 auto
-        text-align: center
-        padding-top: 12rem
-        img
-            width: 100px
+        float: left
+        padding-top: 2rem
+        a
+            color: white
+            text-decoration: none
+            font-size: 2rem
+        span
+            color: $main
+    nav
+        padding-top: 2.88rem
+        float: right
+        ul
+            padding: 0
+            li
+                a
+                    font-size: 1.1rem
+                    font-family: $primary_font
+                    font-style: normal
+                    color: white
+                    position: relative
+                    padding: .44rem .88rem
+                    &:hover
+                        color: $main
+                        &::after
+                            content: ""
+                            width: 0
+                            height: 0
+                            border-left: 5px solid transparent
+                            border-right: 5px solid transparent
+                            border-bottom: 10px solid $main
+                            position: absolute
+                            bottom: -10px
+                            left: 45%
+                    @media (min-width: $breakpoint-desktop)
+                        // padding: 1rem 2rem
     h1
-        font-size: 2.5rem
+        font-size: 3.1rem
         color: white
         text-transform: uppercase
-        padding-top: 3rem
+        padding-top: 14rem
         letter-spacing: .1rem
         span
             color: $main
     p
-        font-size: .7rem
+        font-size: .9rem
         text-transform: uppercase
         color: white
         padding: 2rem 0 2rem 0
         &:before, &:after
             content: ""
             display: block
-            width: 265px
+            width: 320px
             margin: 0 auto
         &::before
             border-top: 1px solid #5d5d5d
@@ -101,9 +138,6 @@ section.cover
             color: $main
     button
         margin-bottom: 2rem
-        &:hover
-            background: white
-            color: $main
     ul
         padding-bottom: 10rem
         li
@@ -117,50 +151,50 @@ section.cover
                 &:hover
                     color: $main
 
-nav
-    background: #0f1118
-    text-align: center
-    @media (max-width: $breakpoint-desktop)
-        display: none
-    ul
-        .logo
-            padding: 0
-            div
-                padding: 0 2rem
-            img
-                cursor: pointer
-                padding: 10px
-                width: 90%
-                vertical-align: middle
-                background: #292C31
-        li
-            display: inline-block
-            float: none
-            a
-                color: white
-                text-decoration: none
-                text-transform: uppercase
-                font-size: 12px
-                line-height: 3rem
-                display: block
-                position: relative
-                padding: 1rem 1rem
-                &:hover
-                    color: $main
-                    &::after
-                        content: ""
-                        width: 0
-                        height: 0
-                        border-left: 5px solid transparent
-                        border-right: 5px solid transparent
-                        border-bottom: 10px solid $main
-                        position: absolute
-                        bottom: 10px
-                        left: 45%
-                @media (min-width: $breakpoint-desktop)
-                    padding: 1rem 2rem
+// nav
+//     background: #0f1118
+//     text-align: center
+//     @media (max-width: $breakpoint-desktop)
+//         display: none
+//     ul
+//         .logo
+//             padding: 0
+//             div
+//                 padding: 0 2rem
+//             img
+//                 cursor: pointer
+//                 padding: 10px
+//                 width: 90%
+//                 vertical-align: middle
+//                 background: #292C31
+//         li
+//             display: inline-block
+//             float: none
+//             a
+//                 color: white
+//                 text-decoration: none
+//                 text-transform: uppercase
+//                 font-size: 12px
+//                 line-height: 3rem
+//                 display: block
+//                 position: relative
+//                 padding: 1rem 1rem
+//                 &:hover
+//                     color: $main
+//                     &::after
+//                         content: ""
+//                         width: 0
+//                         height: 0
+//                         border-left: 5px solid transparent
+//                         border-right: 5px solid transparent
+//                         border-bottom: 10px solid $main
+//                         position: absolute
+//                         bottom: 10px
+//                         left: 45%
+//                 @media (min-width: $breakpoint-desktop)
+//                     padding: 1rem 2rem
 section.about
-    padding: 8rem 0
+    padding: 4rem 0
     overflow: hidden
     .wrapper
         overflow: hidden
@@ -198,7 +232,7 @@ section.about
             margin: 0 auto 0 auto
             border: 1px solid #e0e0e0
             @media (min-width: $breakpoint-desktop)
-                width: 100%
+                width: 30%
         .circle
             width: 100px
             height: 100px
@@ -355,7 +389,7 @@ section.skills
                     border-style: solid
                     border-color: black transparent transparent transparent
 section.portfolio
-    padding: 8rem 0
+    padding: 4rem 0
     overflow: hidden
     .wrapper
         overflow: hidden
@@ -393,7 +427,7 @@ section.portfolio
         text-align: center
         width: auto
         padding: 4%
-        margin: 0 auto
+        margin: .5rem auto
         @media (min-width: $breakpoint-mobile)
             // width: 80%
         @media (min-width: $breakpoint-tablet)
@@ -593,9 +627,9 @@ section.newsletter
                 background: white
                 color: $main
 section.contact
-    padding: 8rem 0
+    padding: 4rem 0
+    border-top: 6px solid #E6E6E6
     .wrapper
-        // padding: 0 4rem
     h2
         text-transform: uppercase
         font-weight: bold
@@ -641,57 +675,38 @@ section.contact
             margin-bottom: 50px
         i
             padding-right: 10px
-        button
-            &:hover
-                background: white
-                color: $main
-                border: 1px solid #dcdcdc
-section.map
-    img
-        width: 100%
 footer
-    overflow: hidden
-    background: #0f1118
-    // height: 200px
-    .half.right
-        margin-right: 0
-        float: right
-        text-align: right
-    .half
-        margin-top: 4rem
-        margin-bottom: 2rem
-        width: 48%
-        margin-right: 4%
-        float: left
-        text-align: left
+    border-top: 6px solid #E6E6E6
+    background: #237FA9
+    padding: 4rem 0 0 0
+    .social
+        .icon
+            fill: #f4f7f9
+            width: 3.5rem
+            height: 3.5rem
+            display: block
+            margin: 0 auto
+            &:hover
+                fill: #86b2c6
     p
         color: white
         line-height: 1.5rem
-        a
-            color: $main
-            text-decoration: none
-            &:hover
-                color: white
-        i
-            font-size: 1.2em !important
-            color: $main
+        font-family: $secondary_font
+        font-style: italic
+    a
+        color: white
+        text-decoration: none
+        &:hover
+            color: #237FA9
     ul
         li
             display: inline-block
-            border: 1px solid #dcdcdc
             padding: 3px
-            &:hover
-                &:nth-child(1)
-                    background: #3F3F3F
-                &:nth-child(2)
-                    background: #3F3F3F
-                &:nth-child(3)
-                    background: #1dcaff
-                &:nth-child(4)
-                    background: #cb2027
 
-        i
-            color: white
+    .bottom
+        margin-top: 4rem
+        background: #86B2C6
+        padding: 1.3rem 0
 
 // css for the back to top button
 .cd-top
