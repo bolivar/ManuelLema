@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $( '#dl-menu' ).dlmenu({
     	animationClasses : { classin : 'animation-class-name', classout : 'animation-class-name' }
     });
@@ -25,7 +26,15 @@ $(document).ready(function(){
 
     $(".primary_button").on( "click", function () {
         window.location = '#portfolio';
+    }, { offset: '250%' });
+
+// <!--************************* jQuery Waypoint for animations ****************-->
+    var $animate = $('.animate');
+    $animate.waypoint(function(){
+      $('.animate').addClass('js-animate');
     });
+
+
 
 })
 

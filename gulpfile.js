@@ -7,10 +7,11 @@ var gulp = require('gulp'),
     reload = browserSync.reload;
     autoprefixer = require('gulp-autoprefixer');
     sass = require('gulp-ruby-sass');
+    uglify = require('gulp-uglify');
 
 // fix problems with undefined Promise class
 // http://stackoverflow.com/questions/32490328/gulp-autoprefixer-throwing-referenceerror-promise-is-not-defined
-// require('es6-promise').polyfill();
+require('es6-promise').polyfill();
 
 var config = {
      sassPath: 'scss',
@@ -52,18 +53,28 @@ gulp.task('browser-sync', function(){
   })
 });
 
+//////////////////////////////////////////////////////
+// Uglify Task
+//////////////////////////////////////////////////////
+gulp.task('compress', function(){
+  return gulp.src('js/*.js')
+  .pipe(uglify())
+  .pipe(gulp.dest('js/dist'));
+});
+
 
 //////////////////////////////////////////////////////
 // Watch Task
 //////////////////////////////////////////////////////
 gulp.task('watch', function(){
-  // gulp.watch('js/*.js', ['scripts']);
+  gulp.watch('js/*.js', ['compress']);
   gulp.watch('scss/**/*.sass', ['css']);
   gulp.watch('*.html', ['html']);
 });
 
 
+
 //////////////////////////////////////////////////////
 // Default Task
 //////////////////////////////////////////////////////
-gulp.task('default', ['css', 'html', 'browser-sync', 'watch']);
+gulp.task('default', ['css', 'html', 'browser-sync', 'compress', 'watch']);
