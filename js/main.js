@@ -26,7 +26,7 @@ $(document).ready(function(){
 
     $(".primary_button").on( "click", function () {
         window.location = '#portfolio';
-    }, { offset: '250%' });
+    });
 
 // <!--************************* jQuery Waypoint for animations ****************-->
     var $animate = $('.animate');

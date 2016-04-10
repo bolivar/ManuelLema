@@ -146,23 +146,30 @@ section.cover
         @media (min-width: $breakpoint-desktop)
             font-size: 3.1rem
     p
-        font-size: .9rem
-        // text-transform: uppercase
+        font-size: .7rem
         color: white
         padding: 2rem 0 2rem 0
-        &:before, &:after
-            content: ""
-            display: block
-            width: 360px
-            margin: 0 auto
-        &::before
-            border-top: 1px solid #5d5d5d
-            padding-bottom: 1rem
-        &::after
-            padding-bottom: 1rem
-            border-bottom: 1px solid #5d5d5d
         span
+            position: relative
+            &:before, &:after
+                position: absolute
+                content: ""
+                width: 100%
+                margin: 0 auto
+                border-top: 1px solid #5d5d5d
+            &::before
+                top: -6px
+            &::after
+                bottom: -6px
+                left: 0
+        span:nth-child(2)
             color: $main
+        @media (min-width: $breakpoint-mobile)
+            font-size: .7rem
+        @media (min-width: $breakpoint-tablet)
+            font-size: .8rem
+        @media (min-width: $breakpoint-desktop)
+            font-size: .9rem
     button
         margin-bottom: 2rem
     ul
@@ -278,7 +285,6 @@ section.skills
                 top: 50%
                 content: ' '
                 width: 50%
-                width: 3em
                 border-top: 1px solid #ccc
             &::before
                 right: 100%
@@ -414,60 +420,80 @@ section.portfolio
                     background: $main
                     color: white
     .row
-        text-align: center
-        width: auto
-        padding: 4%
-        margin: .5rem auto
-        @media (min-width: $breakpoint-tablet)
-            width: 80%
-        @media (min-width: $breakpoint-desktop)
-            text-align: center
-            float: left
-            width: 30%
-            margin: 1.5%
-            padding: 0
-        .box
-            background-size: cover
-            height: 300px
-            border-radius: 3px
-            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2)
-        .shop
-            background-image: url(/img/shop.png)
-        .blog
-            background-image: url(/img/shop_blog.png)
-        .lilynily
-            background-image: url(/img/lilynily.png)
-
-        .overlay
-            background: rgba(0,0,0,.99)
-            text-align: center
-            height: 300px
-            opacity: 0
-            padding-top: 120px
-            cursor: pointer
-            -webkit-transition: opacity .25s ease
-            -moz-transition: opacity .25s ease
-            &:hover
-                opacity: 1
-            .circle
-                width: 50px
-                height: 50px
-                border-radius: 50px
-                background: $main
-                line-height: 60px
-                margin: 0 auto 10px auto
-
-            i
-                color: white
-            .title
-                color: white
-                margin-bottom: 5px
-                text-transform: uppercase
-            .sub-title
-                color: #cdcdcd
-                font-size: .8rem
+        width: 33.3%
+        float: left
+        position: relative
         a
-            text-decoration: none
+            position: relative
+            display: block
+            min-height: 300px
+        img
+            max-width: 90%
+            position: absolute
+            top: 50%
+            left: 50%
+    .row.shop
+        background: #FDE1A7
+    .row.blog
+        background: #EEEDFB
+    .row.lilynily
+        background: #FCAFAC
+
+    // .row
+    //     text-align: center
+    //     width: auto
+    //     padding: 4%
+    //     margin: .5rem auto
+    //     @media (min-width: $breakpoint-tablet)
+    //         width: 80%
+    //     @media (min-width: $breakpoint-desktop)
+    //         text-align: center
+    //         float: left
+    //         width: 30%
+    //         margin: 1.5%
+    //         padding: 0
+    //     .box
+    //         background-size: cover
+    //         height: 300px
+    //         border-radius: 3px
+    //         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2)
+    //     .shop
+    //         background-image: url(/img/shop.png)
+    //     .blog
+    //         background-image: url(/img/shop_blog.png)
+    //     .lilynily
+    //         background-image: url(/img/lilynily.png)
+    //
+    //     .overlay
+    //         background: rgba(0,0,0,.99)
+    //         text-align: center
+    //         height: 300px
+    //         opacity: 0
+    //         padding-top: 120px
+    //         cursor: pointer
+    //         -webkit-transition: opacity .25s ease
+    //         -moz-transition: opacity .25s ease
+    //         &:hover
+    //             opacity: 1
+    //         .circle
+    //             width: 50px
+    //             height: 50px
+    //             border-radius: 50px
+    //             background: $main
+    //             line-height: 60px
+    //             margin: 0 auto 10px auto
+    //
+    //         i
+    //             color: white
+    //         .title
+    //             color: white
+    //             margin-bottom: 5px
+    //             text-transform: uppercase
+    //         .sub-title
+    //             color: #cdcdcd
+    //             font-size: .8rem
+    //     a
+    //         text-decoration: none
 /* Contact Section
    ========================================================================== */
 /**
@@ -525,7 +551,7 @@ section.contact
 
 section.social
     background: #237FA9
-    padding: 8rem
+    padding: 8rem 0
     h2
         text-transform: uppercase
         font-weight: bold
@@ -557,20 +583,22 @@ section.social
             padding: 3px
     hr
         margin: 3rem auto
-        width: 250px
+        width: 70%
         height: 3px
         content: ""
         display: block
         background: $main
-    a[href="mailto:manuelblema@gmail.com"]
-        font-size: 2rem
-        margin: 4rem 0
-        @media (min-width: $breakpoint-mobile)
-            font-size: 2.2rem
-        @media (min-width: $breakpoint-tablet)
-            font-size: 3rem
-        @media (min-width: $breakpoint-desktop)
-            font-size: 4rem
+    .big-email
+        text-align: center
+        a
+            font-size: 1.2rem
+            margin: 4rem 0
+            @media (min-width: $breakpoint-mobile)
+                font-size: 2.2rem
+            @media (min-width: $breakpoint-tablet)
+                font-size: 3rem
+            @media (min-width: $breakpoint-desktop)
+                font-size: 4rem
 
 /* Footer Section
    ========================================================================== */

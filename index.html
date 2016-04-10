@@ -23,14 +23,13 @@
             </div>
             <nav>
                 <ul>
-                    <!-- <li><a href="http://manuellema.com" rel="nofollow">home</a></li> -->
                     <li><a href="#about">about</a></li>
                     <li><a href="#skills">skills</a></li>
                     <li><a href="#portfolio">portfolio</a></li>
                     <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
-            <div class="clearfix"></div>
+            <!-- <div class="clearfix"></div> -->
             <div id="dl-menu" class="dl-menuwrapper">
                 <button class="dl-trigger">Open Menu</button>
                 <ul class="dl-menu">
@@ -42,7 +41,7 @@
                 </ul>
             </div>
             <h1><span>Front-end </span>Developer</h1>
-            <p>HTML • CSS • JavaScript • E-Commerce • Wordpress</p>
+            <p><span>HTML • CSS • JavaScript • E-Commerce • Wordpress</span></p>
             <button class="primary_button">my work</button>
             <ul>
                 <li><a href="http://codepen.io/manuelema/">codepen / </a></li>
@@ -131,7 +130,17 @@
                 <li id="blog"><a href="#">blog</a></li>
                 <li id="e-commerce"><a href="#">e-commerce</a></li>
             </ul>
-            <div class="row">
+            <div class="row shop">
+              <a href="#"><img src="/img/shop_logo.png" alt="" /></a>
+            </div>
+            <div class="row blog">
+              <a href="#"><img src="/img/blog_logo.png" alt="" /></a>
+            </div>
+            <div class="row lilynily">
+              <a href="#"><img src="/img/lilynily_logo.png" alt="" /></a>
+            </div>
+
+            <!-- <div class="row">
                 <a href="http://www.shoplimitededitions.com">
                     <div class="box shop animate">
                         <div class="overlay">
@@ -169,7 +178,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -202,7 +211,9 @@
               </ul>
           </div>
           <hr>
-          <a href="mailto:manuelblema@gmail.com">manuelblema@gmail.com</a>
+          <div class="big-email">
+            <a href="mailto:manuelblema@gmail.com">manuelblema@gmail.com</a>
+          </div>
       </div>
     </section>
 
@@ -257,10 +268,10 @@
     <script>
     // https://css-tricks.com/ajaxing-svg-sprite/
 
-    var template_url = "http://localhost:3000/";
+    var template_url = "http://www.manuellema.com";
     $.get(template_url+"/svg-defs.svg", function(data) {
         var div = document.createElement('div');
-        div.className = 'visually-hidden';
+        div.className = 'hidden';
         div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
         document.body.insertBefore(div, document.body.childNodes[0]);
     });
