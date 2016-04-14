@@ -1,24 +1,6 @@
+@import 'portfolio_styles'
 @import 'responsive_menu'
-/* Colors
-   ========================================================================== */
-/**
-$main: #00c8ff
-$highlight: #b7b6ba
-
-/* Fonts
-   ========================================================================== */
-/**
-$primary_font: 'Montserrat', sans-serif
-$secondary_font: 'Arvo', serif
-
-/* Misc.
-   ========================================================================== */
-/**
-$basic: 28px
-.hidden
-    position: absolute
-    top: -9999999px
-    left: -9999999px
+@import 'variables'
 *
     box-sizing: border-box
 html *
@@ -27,6 +9,7 @@ html *
 
 html, body, button
     font-family: $primary_font
+    overflow-x: hidden
 
 .clearfix:before, .clearfix:after
     content: " "
@@ -69,13 +52,6 @@ a
     &:hover
         background: #1a5f7f
 
-/* Media Queries
-   ========================================================================== */
-/**
-$breakpoint-tablet: 768px
-$breakpoint-mobile: 480px
-$breakpoint-desktop: 965px
-
 /* Animations
    ========================================================================== */
 /**
@@ -104,14 +80,32 @@ section.cover
             font-size: 2rem
         span
             color: $main
-    nav
-        padding-top: 2.88rem
+    nav#main-nav
         float: right
-        @media (max-width: $breakpoint-desktop)
-            display: none
+        width: 100%
+        background: rgba(0, 0, 0, 0.8)
+        max-height: 0
+        overflow: hidden
+        margin-top: 20px
+        @media (min-width: $breakpoint-desktop)
+            max-height: 100px
+            background: none
+            width: auto
+            padding-top: 2.5em
         ul
             padding: 0
             li
+                height: 50px
+                border-bottom: 1px solid $main
+                line-height: 50px
+                display: inherit
+                &:nth-last-child(1)
+                    border-bottom: 1px solid transparent
+                @media (min-width: $breakpoint-desktop)
+                    height: auto
+                    border: 1px solid transparent
+                    line-height: normal
+                    display: inline-block
                 a
                     font-size: 1.1rem
                     font-family: $primary_font
@@ -134,7 +128,6 @@ section.cover
     h1
         font-size: 2rem
         color: white
-        // text-transform: uppercase
         padding-top: 14rem
         letter-spacing: .1rem
         span
@@ -215,6 +208,7 @@ section.about
         text-align: center
         max-width: 80%
         margin: 0 auto
+        transition: all .4s ease-in-out
         @media (min-width: $breakpoint-desktop)
             float: left
             width: 30%
@@ -425,6 +419,7 @@ section.portfolio
         position: relative
         background: #F7F7F7
         overflow: hidden
+        transition: all .4s ease-in-out
         &:hover
             h3
                 transform: translateX(0) translateY(0) translateZ(0)

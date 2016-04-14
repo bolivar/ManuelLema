@@ -1,0 +1,23 @@
+#dl-menu
+	float: right
+	margin-top: 35px
+	@media (min-width: $breakpoint-desktop)
+		display: none
+	span
+		transition: all .05s ease-in-out
+		width: 30px
+		height: 3px
+		display: block
+		background: $main
+		margin: 5px 0
+.active
+	max-height: 13em !important
+.menu-link.active
+	span:nth-child(1)
+		transform: rotate(45deg)
+		margin: 10px 0 0 !important
+	span:nth-child(2)
+		opacity: 0
+	span:nth-child(3)
+		transform: rotate(-45deg)
+		margin: -16px 0 0 !important

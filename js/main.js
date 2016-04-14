@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
-    $( '#dl-menu' ).dlmenu({
-    	animationClasses : { classin : 'animation-class-name', classout : 'animation-class-name' }
+    // mobile menu
+    $("#dl-menu").on("click", function () {
+      $(this).toggleClass('active');
+      $("#main-nav").toggleClass('active');
     });
 
     $( ".portfolio ul li" ).on( "click", function(e) {

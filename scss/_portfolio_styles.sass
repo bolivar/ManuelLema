@@ -1,0 +1,83 @@
+@import 'variables'
+
+/* Cover Section
+   ========================================================================== */
+/**
+section.main
+    background-color: rgba(0, 0, 0, 0.8)
+    text-align: center
+    .logo
+        float: left
+        padding-top: 2rem
+        a
+            color: white
+            text-decoration: none
+            font-size: 2rem
+        span
+            color: $main
+    nav
+        padding-top: 2.88rem
+        float: right
+        @media (max-width: $breakpoint-desktop)
+            display: none
+        ul
+            padding: 0
+            li
+                a
+                    font-size: 1.1rem
+                    font-family: $primary_font
+                    font-style: normal
+                    color: white
+                    position: relative
+                    padding: .44rem .88rem
+                    &:hover
+                        color: $main
+                        &::after
+                            content: ""
+                            width: 0
+                            height: 0
+                            border-left: 5px solid transparent
+                            border-right: 5px solid transparent
+                            border-bottom: 10px solid $main
+                            position: absolute
+                            bottom: -10px
+                            left: 45%
+    p
+        font-size: .7rem
+        color: white
+        padding: 2rem 0 2rem 0
+        span
+            position: relative
+            &:before, &:after
+                position: absolute
+                content: ""
+                width: 100%
+                margin: 0 auto
+                border-top: 1px solid #5d5d5d
+            &::before
+                top: -6px
+            &::after
+                bottom: -6px
+                left: 0
+        span:nth-child(2)
+            color: $main
+        @media (min-width: $breakpoint-mobile)
+            font-size: .7rem
+        @media (min-width: $breakpoint-tablet)
+            font-size: .8rem
+        @media (min-width: $breakpoint-desktop)
+            font-size: .9rem
+    button
+        margin-bottom: 2rem
+    ul
+        padding-bottom: 10rem
+        li
+            display: inline-block
+            a
+                color: white
+                text-decoration: none
+                font-family: $secondary_font
+                font-style: italic
+                font-size: .8rem
+                &:hover
+                    color: $main
