@@ -26,7 +26,7 @@ html, body, button
     @media (max-width: 1050px)
         width: 750px
     @media (max-width: 800px)
-        width: 460px
+        width: 560px
         max-width: 90%
 
 
@@ -113,12 +113,13 @@ section.cover
                     line-height: normal
                     display: inline-block
                 a
-                    font-size: 1.1rem
+                    font-size: 1rem
+                    text-transform: uppercase
                     font-family: $primary_font
                     font-style: normal
                     color: white
                     position: relative
-                    padding: .44rem .88rem
+                    padding: .44rem .54rem
                     &:hover
                         color: $main
                         &::after
@@ -134,7 +135,7 @@ section.cover
     h1
         font-size: 2rem
         color: white
-        padding-top: 14rem
+        padding-top: 18rem
         letter-spacing: .1rem
         span
             color: $main
@@ -145,10 +146,10 @@ section.cover
         @media (min-width: $breakpoint-desktop)
             font-size: 3.1rem
     p
-        font-size: .7rem
         color: white
-        padding: 2rem 0 2rem 0
+        padding: 2rem 0 4rem 0
         span
+            font-size: 1.2rem
             position: relative
             &:before, &:after
                 position: absolute
@@ -170,9 +171,9 @@ section.cover
         @media (min-width: $breakpoint-desktop)
             font-size: .9rem
     button
-        margin-bottom: 2rem
+        margin-bottom: 4rem
     ul
-        padding-bottom: 10rem
+        padding-bottom: 18rem
         li
             display: inline-block
             a
@@ -180,7 +181,7 @@ section.cover
                 text-decoration: none
                 font-family: $secondary_font
                 font-style: italic
-                font-size: .8rem
+                font-size: .9rem
                 &:hover
                     color: $main
 /* about Section
