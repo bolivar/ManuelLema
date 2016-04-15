@@ -19,10 +19,16 @@ html, body, button
     clear: both
 
 .wrapper
-    width: 1170px
-    max-width: 90%
+    width: 1000px
+    max-width: 100%
     margin: 0 auto
     text-align: center
+    @media (max-width: 1050px)
+        width: 750px
+    @media (max-width: 800px)
+        width: 460px
+        max-width: 90%
+
 
 h1, h2, h3, h4, h5, h6
     font-weight: 300
@@ -66,11 +72,11 @@ a
    ========================================================================== */
 /**
 section.cover
-    background: url(/img/bg2.jpg) no-repeat center center
+    background: url(/img/bg2.jpg) no-repeat
     background-size: cover
     text-align: center
     border-bottom: #dddddd solid 1px
-    // box-shadow: inset 0px 30px 30px -30px rgba(0, 0, 0, 0.05)
+    width: 100%
     .logo
         float: left
         padding-top: 2rem
@@ -86,7 +92,7 @@ section.cover
         background: rgba(0, 0, 0, 0.8)
         max-height: 0
         overflow: hidden
-        margin-top: 20px
+        margin-top: .44em
         @media (min-width: $breakpoint-desktop)
             max-height: 100px
             background: none
@@ -188,7 +194,8 @@ section.about
     h2
         font-weight: bold
         text-transform: uppercase
-        margin-bottom: 28px
+        margin-bottom: 20px
+        color: #3e3739
         &::before
             margin: 0 auto 31px auto
             width: 50px
@@ -198,23 +205,21 @@ section.about
             background: $main
     p
         font-family: $secondary_font
-        font-style: italic
         font-size: 1.1rem
         margin-bottom: 102px
-        color: #000
-        line-height: 1.5rem
+        color: #4b4b57
         padding: 0 2%
     .row
+        border: 1px solid #eee
+        box-shadow: 2px 2px 12px #eee
         text-align: center
-        max-width: 80%
-        margin: 0 auto
+        width: 300px
+        margin: 0 auto 12px auto
+        padding: 20px 12px
         transition: all .4s ease-in-out
         @media (min-width: $breakpoint-desktop)
             float: left
-            width: 30%
-            margin-right: 5%
-            &:nth-last-child(1)
-                margin-right: 0
+            margin: 16px
         hr
             width: 50%
             margin: 0 auto 0 auto
@@ -249,18 +254,20 @@ section.about
             text-transform: uppercase
             font-weight: bold
             margin: $basic 0
+            color: #3e3739
         p
             color: #8d8d8d
             line-height: 26px
             font-size: .9rem
             font-style: normal
             padding: 0 10px
+            margin: 0
 /* Skills Section
    ========================================================================== */
 /**
 section.skills
     padding: 8rem 0
-    background: #1f2127
+    background: #34324a
     clear: both
     overflow: auto
     // beautifully implemented via: http://codepen.io/manuelema/pen/dMJWgB?editors=1100
@@ -268,7 +275,7 @@ section.skills
         font-family: $secondary_font
         font-size: 1.5rem
         text-transform: uppercase
-        margin-bottom: 28px
+        margin-bottom: 20px
         color: white
         overflow: hidden
         text-align: center
@@ -287,15 +294,16 @@ section.skills
                 left: 100%
                 margin-left: 1em
     p
+        font-family: $secondary_font
         color: white
         line-height: 1.5rem
-        font-size: .9rem
+        font-size: 1.1rem
         padding: 0 1%
-        font-style: italic
         @media (min-width: $breakpoint-tablet)
             font-size: 1rem
         span
             color: $main
+            text-transform: uppercase
     .half.right
         margin-right: 0
         float: right
@@ -387,6 +395,7 @@ section.portfolio
         text-transform: uppercase
         font-weight: bold
         margin-bottom: $basic
+        color: #3e3739
         &::before
             margin: 0 auto 31px auto
             width: 50px
@@ -396,8 +405,9 @@ section.portfolio
             background: $main
     p
         font-family: $secondary_font
-        font-style: italic
-        margin-bottom: 100px
+        font-size: 1.1rem
+        margin-bottom: 50px
+        color: #4b4b57
     ul
         margin-bottom: 71px
         li
@@ -415,16 +425,28 @@ section.portfolio
                     color: white
     .row
         width: 100%
-        float: left
+    .box
+        margin: 0 auto 2em auto
+        max-width: 100%
+        width: 300px
+        float: none
         position: relative
         background: #F7F7F7
         overflow: hidden
         transition: all .4s ease-in-out
+        border-radius: 6px
+        @media (min-width: $breakpoint-desktop)
+            float: left
+            margin: 0 16px 32px 16px
+        img
+            // filter: grayscale(1) opacity(40%)
         &:hover
             h3
                 transform: translateX(0) translateY(0) translateZ(0)
+                border-radius: 0 0 6px 6px
             img
                 transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9)
+                filter: none
         a
             position: relative
             display: block
@@ -447,14 +469,7 @@ section.portfolio
             background: rgba(0, 0, 0, 0.75)
             transition-property: transform
             transition-duration: 0.3s
-        @media (min-width: $breakpoint-tablet)
-            width: 50%
-        @media (min-width: $breakpoint-desktop)
-            width: 33.3%
-    .row.blog
-        background: #EFEFEF
     .row.lilynily
-        background: #F7F7F7
         img
             max-width: 57%
 
@@ -468,7 +483,8 @@ section.contact
     h2
         text-transform: uppercase
         font-weight: bold
-        margin-bottom: $basic
+        margin-bottom: 20px
+        color: #3e3739
         &::before
             margin: 0 auto 31px auto
             width: 50px
@@ -478,6 +494,9 @@ section.contact
             background: $main
     p
         line-height: 1.5rem
+        font-family: $secondary_font
+        font-size: 1.1rem
+        color: #4b4b57
     .half.right
         margin-top: 0
         @media (min-width: $breakpoint-desktop)
@@ -514,7 +533,7 @@ section.contact
             padding-right: 10px
 
 section.social
-    background: #237FA9
+    background: #34324A
     padding: 8rem 0
     h2
         text-transform: uppercase
@@ -569,7 +588,6 @@ section.social
 /**
 footer
     .bottom
-        margin-top: 4rem
         background: #86B2C6
         padding: 1.3rem 0
     p

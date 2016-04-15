@@ -1,10 +1,11 @@
 @import 'variables'
+@import 'responsive_menu'
 
 /* Cover Section
    ========================================================================== */
 /**
 section.main
-    background-color: rgba(0, 0, 0, 0.8)
+    background-color: #34324A
     text-align: center
     .logo
         float: left
@@ -15,14 +16,32 @@ section.main
             font-size: 2rem
         span
             color: $main
-    nav
-        padding-top: 2.88rem
+    nav#main-nav
         float: right
-        @media (max-width: $breakpoint-desktop)
-            display: none
+        width: 100%
+        background: rgba(0, 0, 0, 0.8)
+        max-height: 0
+        overflow: hidden
+        margin-top: .44em
+        @media (min-width: $breakpoint-desktop)
+            max-height: 100px
+            background: none
+            width: auto
+            padding-top: 2.5em
         ul
             padding: 0
             li
+                height: 50px
+                border-bottom: 1px solid $main
+                line-height: 50px
+                display: inherit
+                &:nth-last-child(1)
+                    border-bottom: 1px solid transparent
+                @media (min-width: $breakpoint-desktop)
+                    height: auto
+                    border: 1px solid transparent
+                    line-height: normal
+                    display: inline-block
                 a
                     font-size: 1.1rem
                     font-family: $primary_font
@@ -42,31 +61,71 @@ section.main
                             position: absolute
                             bottom: -10px
                             left: 45%
-    p
-        font-size: .7rem
+    h1
+        font-size: 1.5rem
         color: white
-        padding: 2rem 0 2rem 0
-        span
-            position: relative
-            &:before, &:after
-                position: absolute
-                content: ""
-                width: 100%
-                margin: 0 auto
-                border-top: 1px solid #5d5d5d
-            &::before
-                top: -6px
-            &::after
-                bottom: -6px
-                left: 0
-        span:nth-child(2)
-            color: $main
-        @media (min-width: $breakpoint-mobile)
-            font-size: .7rem
-        @media (min-width: $breakpoint-tablet)
-            font-size: .8rem
-        @media (min-width: $breakpoint-desktop)
-            font-size: .9rem
+        clear: both
+        float: left
+        width: 100%
+        margin-top: 4rem
+    h2
+        color: white
+        font-size: 1rem
+        line-height: 2rem
+        margin-bottom: 2rem
+        float: left
+        clear: both
+        width: 100%
+    .left
+        width: 58%
+        float: left
+        margin-right: 2%
+        @media (max-width: $breakpoint-desktop)
+            width: 100%
+            text-align: left
+            margin: 0 auto
+    .right
+        width: 40%
+        float: left
+        padding: 0
+        @media (max-width: $breakpoint-desktop)
+            display: none
+        label
+            float: left
+            color: #ADADAD
+            text-transform: uppercase
+            margin-right: 20px
+            width: 45px
+        li
+            float: left
+            line-height: 24px
+            color: white
+            text-align: right
+    .showcase
+        float: left
+        clear: both
+        margin-top: 40px
+    .back
+        float: left
+        width: 100%
+        padding: 1rem 0
+        i
+            color: white
+        a
+            color: white
+            text-decoration: none
+            padding-left: 10px
+            &:hover
+                color: $main
+    img
+        width: 100%
+        border-radius: 6px
+        box-shadow: 1px 1px 1px 4px white
+    p
+        clear: both
+        line-height: 20px
+        color: white
+        text-align: left
     button
         margin-bottom: 2rem
     ul
@@ -76,8 +135,5 @@ section.main
             a
                 color: white
                 text-decoration: none
-                font-family: $secondary_font
-                font-style: italic
-                font-size: .8rem
                 &:hover
                     color: $main

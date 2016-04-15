@@ -24,6 +24,21 @@ $(document).ready(function(){
           $(".shop").show();
           $(".lilynily").show();
       }
+      else if (id == 'shopify') {
+          $(".blog").hide();
+          $(".shop").hide();
+          $(".lilynily").show();
+      }
+      else if (id == 'volusion') {
+          $(".blog").hide();
+          $(".shop").show();
+          $(".lilynily").hide();
+      }
+      else if (id == 'wordpress') {
+          $(".blog").show();
+          $(".shop").hide();
+          $(".lilynily").hide();
+      }
     });
 
     $(".primary_button").on( "click", function () {
